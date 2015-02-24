@@ -1,0 +1,81 @@
+package com.iespacomolla.entidades;
+
+import java.util.*;
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+/**
+ *
+ * @author Chema
+ */
+@Entity
+@Table(name="contratos")
+public class Contrato {
+
+    @Id
+    int id;
+    Date fecha;
+    List coches;//= new HashSet<Coche>()
+    @ManyToOne
+    Cliente cliente;
+    int dias;
+
+    public Contrato(int id, Date fecha, List coches, Cliente cliente, int dias) {
+        this.id = id;
+        this.fecha = fecha;
+        this.coches = coches;
+        this.cliente = cliente;
+        this.dias = dias;
+    }
+
+
+    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public int getDias() {
+        return dias;
+    }
+
+    public void setDias(int dias) {
+        this.dias = dias;
+    }
+
+    public List<Coche> getCoches() {
+        return coches;
+    }
+
+    public void setCoches(List coches) {
+        this.coches = coches;
+    }
+
+    @Override
+    public String toString() {
+        return "Contrato{" + "id=" + id + ", fecha=" + fecha + ", coches=" + coches + ", cliente=" + cliente + ", dias=" + dias + '}';
+    }
+
+}
