@@ -47,6 +47,7 @@ public class RentaCochesServicio
         }
         
         Coche coche = new Coche(id,marca,modelo,matricula,color,precioDia);
+        dao.nuevoCoche(coche);
     }
     
     public void nuevoContrato(int id, Date fecha, Set<Coche> coches, Cliente cliente, int dias)throws Exception
