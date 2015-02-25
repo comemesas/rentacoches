@@ -88,7 +88,19 @@ public class Contrato {
 
     @Override
     public String toString() {
-        return "Contrato{" + "id=" + id + ", fecha=" + fecha + ", coches=" + coches + ", cliente=" + cliente + ", dias=" + dias + '}';
+        return "Contrato{" + "id=" + id + ", fecha=" + fecha + ", coches=\n" + this.cochesToString() + "cliente=\n" + cliente + "\ndias=" + dias + '}';
+    }
+    
+    private String cochesToString()
+    {
+        String cochesString="";
+        
+        for(Coche c :coches)
+        {
+            cochesString = cochesString + c.toString() +"\n";
+        }
+        
+        return cochesString;
     }
 
 }
