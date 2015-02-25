@@ -11,9 +11,11 @@ import com.iespacomolla.entidades.*;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Set;
 
 /**
  *
@@ -231,7 +233,7 @@ public class MenuPrincipal
             Date fecha = sdf.parse(fechaStr);
             
             int añadirCoche=1;
-            List<Coche>coches = new ArrayList<Coche>();
+            Set<Coche>coches = new HashSet<Coche>();
             while(añadirCoche!=0)
             {
                 System.out.println("Introduzca la id del Coche");
