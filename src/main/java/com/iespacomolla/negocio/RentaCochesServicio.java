@@ -10,6 +10,7 @@ import com.iespacomolla.entidades.*;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -48,7 +49,7 @@ public class RentaCochesServicio
         Coche coche = new Coche(id,marca,modelo,matricula,color,precioDia);
     }
     
-    public void nuevoContrato(int id, Date fecha, List<Coche> coches, Cliente cliente, int dias)throws Exception
+    public void nuevoContrato(int id, Date fecha, Set<Coche> coches, Cliente cliente, int dias)throws Exception
     {
         List<Contrato> contratos = dao.mostrarTodosContratos();
         boolean cocheCoincidente = false;
@@ -61,7 +62,7 @@ public class RentaCochesServicio
         
         for(Contrato c :contratos)
         {
-            List<Coche>co = c.getCoches();
+            Set<Coche>co = c.getCoches();
             for(Coche coche : co)
             {
                 for(Coche coch :coches)
@@ -247,7 +248,7 @@ public class RentaCochesServicio
         }
         catch(Exception e)
         {
-            throw new Exception("Ha habido un problema al obtener los clientes: "+e.getLocalizedMessage());
+            throw new Exception("Ha habido un problema al obtener los coches: "+e.getLocalizedMessage());
         }
         return coches;
     }
