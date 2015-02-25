@@ -221,7 +221,7 @@ public class MenuPrincipal
     public void nuevoContrato()
     {
         try {
-            System.out.println("Introduzca el id");
+            System.out.println("Introduzca el id del contrato");
             Scanner sc= new Scanner(System.in);
             int id = sc.nextInt();
 

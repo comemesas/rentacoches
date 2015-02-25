@@ -10,6 +10,7 @@ import com.iespacomolla.entidades.Coche;
 import com.iespacomolla.entidades.Contrato;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -162,7 +163,7 @@ public class RentaCochesDAO implements IDAO
         
         for(Contrato c :contratosCliente)
         {
-            List<Coche>aux = (List<Coche>) c.getCoches();
+            Set<Coche>aux = c.getCoches();
             for(Coche coch :aux)
             {
                 coches.add(coch);
@@ -241,7 +242,7 @@ public class RentaCochesDAO implements IDAO
 
         for (Contrato c : lista) 
         {
-            List<Coche>coches = (List<Coche>) c.getCoches();
+            Set<Coche>coches = c.getCoches();
             for(Coche coch :coches)
             {
                 if(coch.getId()==idCoche)
@@ -267,7 +268,7 @@ public class RentaCochesDAO implements IDAO
         for(Contrato c :contratos)
         {
             float precioContrato = 0;
-            List<Coche>coches = (List<Coche>) c.getCoches();
+            Set<Coche>coches = c.getCoches();
             for(Coche coch :coches)
             {
                 precioContrato = precioContrato + (coch.getPrecioDia()*c.getDias());
