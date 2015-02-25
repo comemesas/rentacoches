@@ -26,6 +26,11 @@ public class Cliente {
         this.direccion = direccion;
     }
 
+    public Cliente() {
+    }
+    
+    
+
     public int getId() {
         return id;
     }

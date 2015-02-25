@@ -41,7 +41,10 @@ public class Contrato {
         this.dias = dias;
     }
 
+    public Contrato() {
+    }
 
+    
     
     public int getId() {
         return id;

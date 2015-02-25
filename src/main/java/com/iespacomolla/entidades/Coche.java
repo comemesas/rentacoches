@@ -31,6 +31,11 @@ public class Coche {
         this.precioDia = precioDia;
     }
 
+    public Coche() {
+    }
+    
+    
+
     public int getId() {
         return id;
     }
